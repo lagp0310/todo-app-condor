@@ -17,7 +17,7 @@
         append-icon="mdi-check"
         @click:append="applyChanges"
         @keyup.enter="applyChanges"
-        @keyup.escape="toggleEditing"
+        @keyup.escape="removeTask"
       ></v-text-field>
       <v-list-item-title
         v-if="!task.editing"
@@ -62,7 +62,7 @@ export default {
         return
       }
 
-      this.toggleEditing()
+      this.$store.commit('toggleEditing', this.task.id)
       this.$store.commit('editTask', {
         taskId: this.task.id,
         taskContent: this.content
@@ -71,13 +71,8 @@ export default {
     toggleDone () {
       this.$store.commit('toggleDone', this.task.id)
     },
-    toggleEditing () {
-      if (!this.content) {
-        this.$store.commit('removeTask', this.task.id)
-        return
-      }
-
-      this.$store.commit('toggleEditing', this.task.id)
+    removeTask () {
+      this.$store.commit('removeTask', this.task.id)
     }
   },
   components: {
