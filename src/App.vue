@@ -4,10 +4,20 @@
       <v-container>
         <v-row>
           <v-col xs="12" md="6">
-            <List listName="Pendiente" :isCompletedList="false" :tasks="pending" @order-by-id="orderByID(true)" @order-by-content="orderByContent(true)" />
+            <List listName="Pendiente"
+              :isCompletedList="false"
+              :tasks="pending"
+              @order-by-id="orderByID(true)"
+              @order-by-content="orderByContent(true)"
+            />
           </v-col>
           <v-col xs="12" md="6">
-            <List listName="Completado" :isCompletedList="true" :tasks="completed" @order-by-id="orderByID(false)" @order-by-content="orderByContent(false)" />
+            <List listName="Completado"
+              :isCompletedList="true"
+              :tasks="completed"
+              @order-by-id="orderByID(false)"
+              @order-by-content="orderByContent(false)"
+            />
           </v-col>
         </v-row>
       </v-container>
