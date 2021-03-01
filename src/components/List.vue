@@ -49,7 +49,7 @@
           </v-list-item-group>
         </v-list>
       </v-menu>
-      <v-tooltip
+      <!-- <v-tooltip
         bottom
       >
         <template v-slot:activator="{ on, attrs }">
@@ -63,7 +63,7 @@
           </v-btn>
         </template>
         <span>Search Tasks</span>
-      </v-tooltip>
+      </v-tooltip> -->
     </v-toolbar>
     <v-list
       flat

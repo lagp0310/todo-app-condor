@@ -13,6 +13,7 @@
           icon
           small
           @click="editTask"
+          :disabled="isEditingTask"
         >
           <v-icon>mdi-pencil-outline</v-icon>
         </v-btn>
@@ -31,6 +32,7 @@
           icon
           small
           @click="removeTask"
+          :disabled="isEditingTask"
         >
           <v-icon>mdi-delete-outline</v-icon>
         </v-btn>
@@ -62,6 +64,11 @@ export default {
     },
     removeTask () {
       this.$store.commit('removeTask', this.taskId)
+    }
+  },
+  computed: {
+    isEditingTask () {
+      return this.$store.state.tasks.filter(task => task.editing).length > 0
     }
   }
 }
