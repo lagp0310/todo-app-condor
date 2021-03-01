@@ -74,7 +74,7 @@
           v-if="tasks.length === 0"
           class="text-subtitle-1 text-center"
         >
-          {{ this.isCompletedList ? 'No Tasks Completed Yet' : 'No Tasks are Pending!' }}
+          {{ this.isCompletedList ? 'No Completed Tasks Yet' : 'No Pending Tasks' }}
         </p>
         <div v-for="task in tasks" :key="task.id">
           <ListItem
